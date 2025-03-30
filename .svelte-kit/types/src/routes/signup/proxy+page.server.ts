@@ -84,13 +84,14 @@ export const actions = {
         return fail(400, { 
           message: 'Email already in use. Please use a different email or sign in.',
           name,
+          email
         });
       }
       
       return fail(500, { 
         message: 'An error occurred during signup. Please try again.',
         name,
-        email,
+        email
       });
     }
   }

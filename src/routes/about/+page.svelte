@@ -4,7 +4,7 @@
 
 <div class="bg-white">
   <!-- Header/Hero section -->
-  <div class="relative bg-blue-50">
+  <div class="relative bg-[#e6faff]">
     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-white"></div>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
@@ -15,7 +15,7 @@
           <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             <span class="block text-white">About Ploos</span>
           </h1>
-          <p class="mt-6 max-w-lg mx-auto text-center text-xl text-blue-100 sm:max-w-3xl">
+          <p class="mt-6 max-w-lg mx-auto text-center text-xl text-[#b3f0ff] sm:max-w-3xl">
             Guiding your journey through luxury home creation with intelligence and elegance.
           </p>
         </div>
@@ -48,7 +48,7 @@
     <div class="relative px-4 sm:px-6 lg:px-8">
       <div class="text-lg max-w-prose mx-auto">
         <h1>
-          <span class="block text-base text-center text-blue-600 font-semibold tracking-wide uppercase">Our Mission</span>
+          <span class="block text-base text-center text-[color:var(--brand-color)] font-semibold tracking-wide uppercase">Our Mission</span>
           <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Transforming Luxury Home Creation
           </span>
@@ -87,10 +87,10 @@
   </div>
 
   <!-- Team section (placeholder for future) -->
-  <div class="bg-blue-50 py-16 sm:py-24">
+  <div class="bg-[#e6faff] py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:text-center">
-        <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Team</h2>
+        <h2 class="text-base text-[color:var(--brand-color)] font-semibold tracking-wide uppercase">Our Team</h2>
         <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Led by Industry Experts
         </p>
@@ -109,7 +109,7 @@
   <div class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:text-center">
-        <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Focus</h2>
+        <h2 class="text-base text-[color:var(--brand-color)] font-semibold tracking-wide uppercase">Our Focus</h2>
         <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           The Luxury Home Market
         </p>
@@ -118,7 +118,7 @@
         <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
           <div class="relative">
             <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[color:var(--brand-color)] text-white">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
@@ -132,7 +132,7 @@
 
           <div class="relative">
             <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[color:var(--brand-color)] text-white">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
@@ -146,7 +146,7 @@
 
           <div class="relative">
             <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[color:var(--brand-color)] text-white">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -164,15 +164,15 @@
   </div>
 
   <!-- CTA section -->
-  <div class="bg-blue-700">
+  <div class="bg-[color:var(--brand-color)]">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
         <span class="block">Join our journey</span>
       </h2>
-      <p class="mt-4 text-lg leading-6 text-blue-200">
+      <p class="mt-4 text-lg leading-6 text-[#b3f0ff]">
         Be among the first to experience the future of luxury home creation.
       </p>
-      <a href="/#waitlist" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 sm:w-auto">
+      <a href="/#waitlist" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-[color:var(--brand-color)] bg-white hover:bg-[#e6faff] sm:w-auto">
         Join Our Waitlist
       </a>
     </div>
