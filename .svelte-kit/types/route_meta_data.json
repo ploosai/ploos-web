@@ -1,10 +1,41 @@
 {
 	"/": [],
+	"/about": [],
+	"/api/categories": [
+		"src/routes/api/categories/+server.ts"
+	],
+	"/api/contact": [
+		"src/routes/api/contact/+server.ts"
+	],
+	"/api/selections": [
+		"src/routes/api/selections/+server.ts"
+	],
+	"/api/selections/[id]": [
+		"src/routes/api/selections/[id]/+server.ts"
+	],
+	"/api/selections/[id]/dependencies": [
+		"src/routes/api/selections/[id]/dependencies/+server.ts"
+	],
+	"/api/waitlist": [
+		"src/routes/api/waitlist/+server.ts"
+	],
+	"/dashboard": [
+		"src/routes/dashboard/+page.server.ts"
+	],
 	"/demo": [],
 	"/demo/lucia": [
 		"src/routes/demo/lucia/+page.server.ts"
 	],
 	"/demo/lucia/login": [
 		"src/routes/demo/lucia/login/+page.server.ts"
+	],
+	"/login": [
+		"src/routes/login/+page.server.ts"
+	],
+	"/logout": [
+		"src/routes/logout/+page.server.ts"
+	],
+	"/signup": [
+		"src/routes/signup/+page.server.ts"
 	]
 }

@@ -4,6 +4,7 @@ import { sha256 } from '@oslojs/crypto/sha2';
 import { encodeBase64url, encodeHexLowerCase } from '@oslojs/encoding';
 import { db } from '$lib/server/db';
 import * as table from '$lib/server/db/schema';
+import { verify, hash } from '@node-rs/argon2';
 
 const DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -79,3 +80,96 @@ export function deleteSessionTokenCookie(event: RequestEvent) {
 		path: '/'
 	});
 }
+
+// Define all possible user roles in the system
+export const ROLES = {
+	HOMEOWNER: 'homeowner',
+	DESIGNER: 'designer',
+	BUILDER: 'builder',
+	SUPERINTENDENT: 'superintendent',
+	HOA_BOARD: 'hoa_board',
+	MUNICIPALITY: 'municipality',
+	MANUFACTURER: 'manufacturer',
+	RETAILER: 'retailer',
+	ADMIN: 'admin'
+} as const;
+
+export type Role = typeof ROLES[keyof typeof ROLES];
+
+// Authentication service
+export const auth = {
+	// Create a new user
+	async createUser(userData: {
+		email: string;
+		password: string;
+		name: string;
+		role: Role;
+	}) {
+		const passwordHash = await hash(userData.password);
+		
+		const newUser = await db.insert(table.user).values({
+			email: userData.email,
+			passwordHash,
+			name: userData.name,
+			role: userData.role,
+		}).returning();
+		
+		return newUser[0];
+	},
+	
+	// Verify user credentials and return the user if valid
+	async verifyCredentials(email: string, password: string) {
+		const user = await db.query.user.findFirst({
+			where: eq(table.user.email, email),
+		});
+		
+		if (!user || !user.passwordHash) {
+			return null;
+		}
+		
+		const isValid = await verify(user.passwordHash, password);
+		
+		if (!isValid) {
+			return null;
+		}
+		
+		return user;
+	},
+	
+	// Assign additional roles to a user
+	async assignRole(userId: string, role: Role, projectId?: string) {
+		return db.insert(table.userRole).values({
+			userId,
+			role,
+			...(projectId && { projectId }),
+		}).returning();
+	},
+	
+	// Get all roles for a user
+	async getUserRoles(userId: string) {
+		return db.query.userRole.findMany({
+			where: eq(table.userRole.userId, userId),
+		});
+	},
+	
+	// Check if a user has a specific role (either global or project-specific)
+	async hasRole(userId: string, role: Role, projectId?: string) {
+		// Check for the main user role
+		const user = await db.query.user.findFirst({
+			where: eq(table.user.id, userId),
+		});
+		
+		if (user?.role === role) {
+			return true;
+		}
+		
+		// Check additional roles
+		const additionalRoles = await db.query.userRole.findMany({
+			where: eq(table.userRole.userId, userId),
+		});
+		
+		return additionalRoles.some(r => 
+			r.role === role && (!projectId || r.projectId === projectId)
+		);
+	},
+};
