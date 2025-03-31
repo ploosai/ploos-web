@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
 :root {
   --brand-color: #00ccff;
+  --secondary-color: #FFA230; /* Bright tangerine/light orange */
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Thinner stroke widths */
+svg {
+  stroke-width: 1.5px;
+}
+
+button, a {
+  outline-width: 1px;
+}
+
+.border, .border-t, .border-b, .border-l, .border-r {
+  border-width: 1px !important;
 }

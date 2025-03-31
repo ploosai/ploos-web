@@ -29,12 +29,17 @@
 	"/demo/lucia/login": [
 		"src/routes/demo/lucia/login/+page.server.ts"
 	],
+	"/faq": [],
+	"/how-it-works": [],
 	"/login": [
 		"src/routes/login/+page.server.ts"
 	],
 	"/logout": [
 		"src/routes/logout/+page.server.ts"
 	],
+	"/pricing": [],
+	"/privacy": [],
+	"/selections": [],
 	"/signup": [
 		"src/routes/signup/+page.server.ts"
 	]

@@ -3,19 +3,40 @@
 </script>
 
 <div class="bg-white">
-  <!-- Header/Hero section -->
-  <div class="relative bg-[#e6faff]">
-    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-white"></div>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
-        <div class="absolute inset-0">
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-700 mix-blend-multiply"></div>
+  <!-- Navigation -->
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="text-[color:var(--brand-color)] font-semibold text-2xl">Ploos</span>
         </div>
-        <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+      </div>
+      <div class="flex space-x-4">
+        <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+          Home
+        </a>
+        <a href="/about" class="text-gray-900 font-semibold px-3 py-2 rounded-md text-sm font-medium">
+          About
+        </a>
+        <a href="/login" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+          Login
+        </a>
+        <a href="/signup" class="bg-[color:var(--brand-color)] text-white hover:bg-[#00a3cc] px-3 py-2 rounded-md text-sm font-medium">
+          Sign up
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header/Hero section -->
+  <div class="relative bg-white">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div class="relative sm:rounded-2xl sm:overflow-hidden py-16 sm:py-24 lg:py-32">
+        <div class="px-4 sm:px-6 lg:px-8">
           <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            <span class="block text-white">About Ploos</span>
+            <span class="block text-[color:var(--brand-color)]">About Ploos</span>
           </h1>
-          <p class="mt-6 max-w-lg mx-auto text-center text-xl text-[#b3f0ff] sm:max-w-3xl">
+          <p class="mt-6 max-w-lg mx-auto text-center text-xl text-gray-600 sm:max-w-3xl">
             Guiding your journey through luxury home creation with intelligence and elegance.
           </p>
         </div>
