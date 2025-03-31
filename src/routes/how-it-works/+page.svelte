@@ -8,7 +8,7 @@
     <div class="flex justify-between h-16 items-center">
       <div class="flex">
         <div class="flex-shrink-0 flex items-center">
-          <span class="text-[color:var(--brand-color)] font-semibold text-2xl">Ploos</span>
+          <a href="/" class="text-[color:var(--brand-color)] text-2xl company-name">Ploos</a>
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:space-x-4">
           <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">

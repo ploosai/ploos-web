@@ -102,7 +102,7 @@
       <div class="flex justify-between h-16 items-center">
         <div class="flex">
           <div class="flex-shrink-0 flex items-center">
-            <span class="text-[color:var(--brand-color)] font-semibold text-2xl">Ploos</span>
+            <a href="/" class="text-[color:var(--brand-color)] text-2xl company-name">ploos</a>
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:space-x-4">
             <a href="/about" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
@@ -413,15 +413,15 @@
     </div>
 
     <!-- Waitlist section -->
-    <div class="bg-[#00ccff]" id="waitlist">
+    <div class="bg-brand-gradient" id="waitlist">
       <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
           <span class="block">Ready to begin your journey?</span>
         </h2>
-        <p class="mt-4 text-lg leading-6 text-[#b3f0ff]">
+        <p class="mt-4 text-lg leading-6 text-white">
           Join our waitlist for early access to the Ploos platform. We're working with select custom home builders and luxury homes across the country.
         </p>
-        <p class="mt-2 text-base leading-6 text-[#b3f0ff]">
+        <p class="mt-2 text-base leading-6 text-white opacity-80">
           Our initial partners include elite builders, designers, and developers committed to redefining luxury home creation using cutting-edge technology. Be among the first to experience how Ploos transforms the journey.
         </p>
         
@@ -433,14 +433,14 @@
               type="email" 
               placeholder="Enter your email" 
               bind:value={waitlistEmail}
-              class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00ccff] focus:border-[#00ccff]"
+              class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
               required
             >
           </div>
           <div class="mt-3 sm:mt-0 sm:ml-3">
             <button 
               type="submit" 
-              class="block w-full py-3 px-4 rounded-md shadow bg-[#80e6ff] text-white font-medium hover:bg-[#4ddbff] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#b3f0ff] focus:ring-offset-[#00ccff] disabled:opacity-75 disabled:cursor-not-allowed"
+              class="block w-full py-3 px-4 rounded-md shadow bg-white text-[color:var(--brand-color-dark)] font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-[color:var(--brand-color)] disabled:opacity-75 disabled:cursor-not-allowed"
               disabled={waitlistSubmitting}
             >
               {#if waitlistSubmitting}
@@ -453,12 +453,12 @@
         </form>
         
         {#if waitlistMessage.text}
-          <div class="mt-4 p-3 rounded {waitlistMessage.type === 'success' ? 'bg-[#1ad1ff] text-[#e6faff]' : 'bg-red-700 text-white'}">
+          <div class="mt-4 p-3 rounded {waitlistMessage.type === 'success' ? 'bg-white bg-opacity-20 text-white' : 'bg-red-700 text-white'}">
             {waitlistMessage.text}
           </div>
         {/if}
         
-        <p class="mt-3 text-sm text-[#b3f0ff]">
+        <p class="mt-3 text-sm text-white opacity-80">
           We care about your data. Read our <a href="/privacy" class="text-white underline">Privacy Policy</a>.
         </p>
       </div>
@@ -468,14 +468,8 @@
     <div class="bg-white py-16 sm:py-24">
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative py-24 px-8 rounded-xl shadow-2xl overflow-hidden lg:px-16 lg:grid lg:grid-cols-2 lg:gap-x-8">
-          <div class="absolute inset-0">
-            <img 
-              src="https://plus.unsplash.com/premium_photo-1677474827617-6a7269f97574?q=80&w=3514&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Luxury home interior" 
-              class="w-full h-full object-cover"
-              crossorigin="anonymous"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div class="absolute inset-0 bg-black">
+            <div class="absolute inset-0 bg-brand-gradient opacity-90"></div>
           </div>
           <div class="relative lg:col-span-1">
             <div class="text-white">
@@ -491,78 +485,65 @@
               </p>
             </div>
           </div>
-          <div class="relative mt-12 sm:mt-16 lg:mt-0">
-            <div class="bg-white py-8 px-6 rounded-xl lg:p-8">
-              <div class="text-center lg:text-left">
-                <h3 class="text-lg font-medium text-gray-900">Contact Us</h3>
-                <p class="mt-2 text-sm text-gray-500">
-                  Interested in learning more? Send us a message.
-                </p>
-              </div>
+          <div class="relative mt-12 lg:mt-0 lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-medium text-gray-900 mb-4">Contact Us</h3>
+              <p class="text-gray-500 mb-6">Interested in learning more? Send us a message.</p>
               
               {#if contactResponse.text}
-                <div class="mt-4 p-3 rounded {contactResponse.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}">
+                <div class="mt-4 mb-4 p-3 rounded {contactResponse.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}">
                   {contactResponse.text}
                 </div>
               {/if}
               
-              <div class="mt-6">
-                <form on:submit={handleContactSubmit} class="grid grid-cols-1 gap-y-6">
-                  <div>
-                    <label for="contact-name" class="sr-only">Full name</label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      id="contact-name" 
-                      bind:value={contactName}
-                      class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-[color:var(--brand-color)] focus:border-[color:var(--brand-color)] border-gray-300 rounded-md" 
-                      placeholder="Full name"
-                      required
-                    >
-                  </div>
-                  <div>
-                    <label for="contact-email" class="sr-only">Email</label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      id="contact-email" 
-                      bind:value={contactEmail}
-                      class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-[color:var(--brand-color)] focus:border-[color:var(--brand-color)] border-gray-300 rounded-md" 
-                      placeholder="Email"
-                      required
-                    >
-                  </div>
-                  <div>
-                    <label for="contact-message" class="sr-only">Message</label>
-                    <textarea 
-                      name="message" 
-                      id="contact-message" 
-                      rows="4" 
-                      bind:value={contactMessage}
-                      class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-[color:var(--brand-color)] focus:border-[color:var(--brand-color)] border border-gray-300 rounded-md" 
-                      placeholder="Message"
-                      required
-                    ></textarea>
-                  </div>
-                  <div>
-                    <button 
-                      type="submit" 
-                      class="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-[#00ccff] hover:bg-[#00a3cc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00ccff] disabled:opacity-75 disabled:cursor-not-allowed"
-                      disabled={contactSubmitting}
-                    >
-                      {#if contactSubmitting}
-                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      {:else}
-                        Send Message
-                      {/if}
-                    </button>
-                  </div>
-                </form>
-              </div>
+              <form on:submit={handleContactSubmit}>
+                <div class="mb-4">
+                  <label for="contact-name" class="sr-only">Full name</label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    bind:value={contactName}
+                    class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-[color:var(--brand-color)] focus:border-[color:var(--brand-color)]" 
+                    placeholder="Full name"
+                    required
+                  >
+                </div>
+                <div class="mb-4">
+                  <label for="contact-email" class="sr-only">Email</label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    bind:value={contactEmail}
+                    class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-[color:var(--brand-color)] focus:border-[color:var(--brand-color)]" 
+                    placeholder="Email"
+                    required
+                  >
+                </div>
+                <div class="mb-4">
+                  <label for="contact-message" class="sr-only">Message</label>
+                  <textarea 
+                    id="contact-message" 
+                    rows="4" 
+                    bind:value={contactMessage}
+                    class="block w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:ring-[color:var(--brand-color)] focus:border-[color:var(--brand-color)]" 
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+                <div>
+                  <button 
+                    type="submit" 
+                    class="w-full py-3 px-4 bg-brand-gradient text-white font-medium rounded-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:var(--brand-color)]"
+                    disabled={contactSubmitting}
+                  >
+                    {#if contactSubmitting}
+                      <span>Sending...</span>
+                    {:else}
+                      <span>Send Message</span>
+                    {/if}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
